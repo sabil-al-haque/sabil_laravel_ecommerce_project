@@ -27,7 +27,41 @@
                             <input type="submit" value="Submit" class="btn btn-primary">
                         </div>
                         </form>
+        </div>
+        <div>
+          <div class="col-lg-6">
+            <div class="block">
+              <div class="title"><strong>Striped table with hover effect</strong></div>
+              <div class="table-responsive"> 
+                <table class="table table-striped table-hover">
+                  <thead>
+                    <tr>
+                      <th>#</th>
+                      <th>Category Name</th>
+                      <th>Action</th>
+                      <th>Username</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    @foreach ($data as $data )
+                    <tr>
+                      
+                        
+                      
+                      <th scope="row">1</th>
+                      <td>{{ $data->category_name }}</td>
+                      <td>Otto</td>
+                      <td>@mdo</td>
+
+                  
+                    </tr>
+                    @endforeach
+                  </tbody>
+                </table>
+              </div>
             </div>
+          </div>
+        </div>
       </div>
 
       <!-- Body part end-->

@@ -8,7 +8,9 @@ use Illuminate\Http\Request;
 class AdminController extends Controller
 {
     public function view_category(){
-        return view('admin.category');
+
+        $data = Category::all();
+        return view('admin.category', compact('data'));
     }
 
     
@@ -18,6 +20,8 @@ class AdminController extends Controller
 
         $category->category_name = $request->category;
         $category->save();
+
+        toastr()->success('Data added successfully.');
 
         return redirect()->back();
 

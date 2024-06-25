@@ -13,7 +13,21 @@
       <!-- Sidebar Navigation end-->
 <!-- Body part star-->
       <div class="page-content">
-      @include('admin.body')
+
+        <div class="block-body">
+            <h1>Add Category</h1>
+                        <form action="{{ url('add_category') }}" method="POST" >
+                          @csrf
+                        <div class="form-group">
+                            <label class="form-control-label">Add Category</label>
+                            <input type="text" name="category" placeholder="Add Category" class="form-control">
+                        </div>
+                        
+                        <div class="form-group">       
+                            <input type="submit" value="Submit" class="btn btn-primary">
+                        </div>
+                        </form>
+            </div>
       </div>
 
       <!-- Body part end-->

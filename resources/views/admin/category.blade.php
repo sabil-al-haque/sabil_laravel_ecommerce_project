@@ -48,9 +48,13 @@
                       
                         
                       
-                      <th scope="row">1</th>
+                      <th scope="row">{{ $data->id }}</th>
                       <td>{{ $data->category_name }}</td>
-                      <td>Otto</td>
+                      <td>
+                        <a class="btn btn-primary" href="">Edit</a>
+                        <a class="btn btn-primary" href="{{ url('delete_category',$data->id) }}">Delete</a>
+                      </td>
+                      
                       <td>@mdo</td>
 
                   

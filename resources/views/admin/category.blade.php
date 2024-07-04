@@ -27,6 +27,8 @@
                             <input type="submit" value="Submit" class="btn btn-primary">
                         </div>
                         </form>
+
+                        
         </div>
         <div>
           <div class="col-lg-6">
@@ -38,8 +40,10 @@
                     <tr>
                       <th>#</th>
                       <th>Category Name</th>
-                      <th>Action</th>
-                      <th>Username</th>
+                      
+                      {{-- <th>Username</th> --}}
+                      <th>Edit</th>
+                      <th>Delete</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -51,13 +55,15 @@
                       <th scope="row">{{ $data->id }}</th>
                       <td>{{ $data->category_name }}</td>
                       <td>
-                        <a class="btn btn-primary" href="">Edit</a>
-                        <a class="btn btn-primary" href="{{ url('delete_category',$data->id) }}">Delete</a>
+                        <a class="btn btn-primary" href="{{ url('edit_category',$data->id) }}">Edit</a>
+                        
+                      </td>
+
+                      <td>
+                        <a class="btn btn-primary" onclick="confirmation(event)" href="{{ url('delete_category',$data->id) }}">Delete</a>
                       </td>
                       
-                      <td>@mdo</td>
-
-                  
+                      {{-- <td>@mdo</td> --}}              
                     </tr>
                     @endforeach
                   </tbody>
@@ -70,14 +76,10 @@
 
       <!-- Body part end-->
     </div>
+
+
     <!-- JavaScript files-->
-    <script src="{{asset('admincss/vendor/jquery/jquery.min.js')}}"></script>
-    <script src="{{asset('admincss/vendor/popper.js/umd/popper.min.js')}}"> </script>
-    <script src="{{asset('admincss/vendor/bootstrap/js/bootstrap.min.js')}}"></script>
-    <script src="{{asset('admincss/vendor/jquery.cookie/jquery.cookie.js')}}"> </script>
-    <script src="{{asset('admincss/vendor/chart.js/Chart.min.js')}}"></script>
-    <script src="{{asset('admincss/vendor/jquery-validation/jquery.validate.min.js')}}"></script>
-    <script src="{{asset('admincss/js/charts-home.js')}}"></script>
-    <script src="{{asset('admincss/js/front.js')}}"></script>
+    @include('admin.js')
+  </body>
   </body>
 </html>

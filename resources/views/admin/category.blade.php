@@ -55,7 +55,7 @@
                       <th scope="row">{{ $data->id }}</th>
                       <td>{{ $data->category_name }}</td>
                       <td>
-                        <a class="btn btn-primary" href="{{ url('edit_category',$data->id) }}">Edit</a>
+                        <a class="btn btn-success" href="{{ url('edit_category',$data->id) }}">Edit</a>
                         
                       </td>
 

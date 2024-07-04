@@ -15,7 +15,14 @@
       <div class="page-content">
         <div class="">
             <div class="block">
-              <div class="title"><strong>Striped table with hover effect</strong></div>
+              <div class="title"><strong>All Product</strong></div>
+              <div>
+                <form action="{{ url('product_search') }}" method="get">
+                  @csrf
+                  <input type="search" name="search">
+                  <input type="submit" class="btn btn-success"  value="Search" >
+                </form>
+              </div>
               <div class="table-responsive"> 
                 <table class="table table-striped table-hover">
                   <thead>
@@ -49,7 +56,7 @@
                           <a class="btn btn-primary" onclick="confirmation(event)" href="{{ url('delete_product',$products->id) }}">Delete</a>
                         </td>
                         <td>
-                          <a class="btn btn-primary"  href="{{ url('update_product',$products->id) }}">Edit</a>
+                          <a class="btn btn-success"  href="{{ url('update_product',$products->id) }}">Edit</a>
                         </td>
                         
                       </tr>

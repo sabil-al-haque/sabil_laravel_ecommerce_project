@@ -14,7 +14,7 @@ route::get('/',[HomeController::class,'home']);
 
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    return view('home.index');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
@@ -52,3 +52,5 @@ route::get('delete_product/{id}',[AdminController::class,'delete_product'])->mid
 route::get('update_product/{id}',[AdminController::class,'update_product'])->middleware(['auth','admin']);
 //edit_product
 route::post('edit_product/{id}',[AdminController::class,'edit_product'])->middleware(['auth','admin']);
+//product_search
+route::get('product_search',[AdminController::class,'product_search'])->middleware(['auth','admin']);

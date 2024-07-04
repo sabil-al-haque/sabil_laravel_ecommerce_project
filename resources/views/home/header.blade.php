@@ -34,26 +34,50 @@
             </li>
           </ul>
           <div class="user_option">
-            <a href="{{url('/login')}}">
-              <i class="fa fa-user" aria-hidden="true"></i>
-              <span>
-                Login
-              </span>
-            </a>
-            <a href="{{url('/register')}}">
-              <i class="fa fa-vcard" aria-hidden="true"></i>
-              <span>
-                Register
-              </span>
-            </a>
-            <a href="">
-              <i class="fa fa-shopping-bag" aria-hidden="true"></i>
-            </a>
-            <form class="form-inline ">
+            @if (Route::has('login'))
+                           
+                                @auth
+
+                                <div>
+                                  <a href="">
+                                    <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                                  </a>
+                                </div>
+                                             <!-- Authentication -->
+                                    <form method="POST" action="{{ route('logout') }}">
+                                      @csrf
+
+                                      <input type="submit" value="Logout" class="btn btn-success">
+                                      
+                                    </form>
+
+
+                                    
+                                @else
+                                  <a href="{{url('/login')}}">
+                                    <i class="fa fa-user" aria-hidden="true"></i>
+                                    <span>
+                                      Login
+                                    </span>
+                                  </a>
+                                  <a href="{{url('/register')}}">
+                                    <i class="fa fa-vcard" aria-hidden="true"></i>
+                                    <span>
+                                      Register
+                                    </span>
+                                  </a>
+                                @endauth
+                            
+                        @endif
+
+         
+            {{-- <form class="form-inline ">
               <button class="btn nav_search-btn" type="submit">
                 <i class="fa fa-search" aria-hidden="true"></i>
               </button>
-            </form>
+            </form> --}}
+
+
           </div>
         </div>
       </nav>
